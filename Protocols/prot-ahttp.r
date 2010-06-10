@@ -43,6 +43,7 @@ POSSIBILITY OF SUCH DAMAGE.
     Version: 1.9.0 ; majorv.minorv.status
                    ; status: 0: unfinished; 1: testing; 2: stable
     History: [
+		10-Jun-2010 1.1.1 "Exported read and write events - Graham."
         28-Apr-2004 1.1.0 "History start"
         29-Apr-2004 1.2.0 "First (maybe) working version"
         29-Apr-2004 1.3.0 "It wasn't"
