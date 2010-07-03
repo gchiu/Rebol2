@@ -168,6 +168,7 @@ context [
                     Content-Length: Location: Expires: Referer: Connection: Authorization: none
                 ]
                 if not pos: find http-port/state/inBuffer "^M^J^M^J" [
+					probe http-port/state/inBuffer
                     return http-port/awake http-port make error! "Invalid HTTP header in response"
                 ]
                 parse/all http-port/state/inBuffer [
