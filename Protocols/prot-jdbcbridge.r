@@ -4,11 +4,12 @@ REBOL [
 	Author: "Graham Chiu"
 	File: %prot-jdbcbridge.r
 	Date: 2010-07-03
-	Version: 0.0.1
+	Version: 0.0.2
 	Copyright: "Graham Chiu"
 	License: "Lesser GNU General Public License (LGPL)"
 	History: [ 
-		3-July-2010 first pass
+		3-July-2010 0.0.1 first pass
+					0.0.2 changed "(?)" to "?" in the insert, and look also for word? types
 	]
 	Library: [
 		level: 'intermediate
@@ -74,10 +75,10 @@ make root-protocol [
 			] [
 				; replace the place holders
 				foreach var next cmd [
-					either any [string? var date? var] [
-						replace cmd/1 "(?)" rejoin ["'" var "'"]
+					either any [string? var date? var word? var] [
+						replace cmd/1 "?" rejoin ["'" var "'"]
 					] [
-						replace cmd/1 "(?)" var
+						replace cmd/1 "?" var
 					]
 				]
 				write-io port/sub-port data: join cmd/1 crlf sys-length? data
