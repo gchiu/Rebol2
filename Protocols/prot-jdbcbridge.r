@@ -74,7 +74,7 @@ make root-protocol [
 				write-io port/sub-port data: join form reduce cmd crlf sys-length? data
 			] [
 				; replace the place holders
-				foreach var next cmd [
+				foreach var reduce next cmd [
 					either any [string? var date? var word? var] [
 						replace cmd/1 "?" rejoin ["'" var "'"]
 					] [
