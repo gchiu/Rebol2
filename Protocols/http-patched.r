@@ -201,7 +201,7 @@ comment { ; original code
 ;			if post-data [append http-packet post-data]
 		]
  
-		send-and-check: func [] [
+		send-and-check: func [/local ptr data] [
 			net-utils/net-log http-packet
  
 			; Sterling, why was this changed from insert to write-io ? It causes HTTP to be sent
@@ -224,9 +224,9 @@ comment { ; original code
                     tail? ptr
                 ]
             ]			
+; End Max's patch 
 			continue-post
 		]
-; End Max's patch 
 		continue-post: func [/tunnel /local digit space] [
 			response-line: system/words/pick port/sub-port 1
 			net-utils/net-log response-line
