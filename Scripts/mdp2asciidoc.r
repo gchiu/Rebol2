@@ -4,7 +4,7 @@ Rebol [
 	file: %mdp2asciidoc.r
 	author: "Graham Chiu"
 	date: 3-Jan-2013
-	purpose: {convert makedocpro markup to asciidoc.  Abused Carl's original makedoc2.r for this.  Uses rebol/view.}
+	purpose: {convert makedocpro markup to asciidoc.  Abused Carl's original makedoc2.r for this.  Uses rebol/view though this can be removed.}
 
 comment {
 REBOL [
