@@ -74,7 +74,7 @@ ssend: func [
 		; remove non-email values
 		remove-each value address [not email? :value]
 		message: head insert insert tail net-utils/export header-obj newline message
-		insert smtp-port reduce [ email	address message	]
+		insert smtp-port reduce [from address message]
 	] [
 		foreach addr address [
 			if email? addr [
